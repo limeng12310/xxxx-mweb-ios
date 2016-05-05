@@ -13,7 +13,8 @@
         common: {
             root: 'common',
             less: 'common/less/*.less',
-            js: 'common/js/*.js'
+            js: 'common/js/*.js',
+            resource: 'common/resource/*'
         },
         pages: {
             // 新增页面时,需要追加list
@@ -41,7 +42,8 @@
         build: {
             root: 'build/',
             styles: 'build/css/',
-            scripts: 'build/js/'
+            scripts: 'build/js/',
+            resource: 'build/resource'
         },
         dist: {
             root: '../public/',
@@ -77,7 +79,7 @@
     });
 
     gulp.task('common', function (cb) {
-        var subTasks = 2;
+        var subTasks = 3;
         var cbs = 0;
 
         // common js
@@ -102,6 +104,15 @@
                     cb();
                 }
             });
+
+        // common resource
+        gulp.src([paths.common.resource])
+            .pipe(gulp.dest(paths.build.resource))
+            .on('end', function () {
+                if (++cbs === subTasks) {
+                    cb();
+                }
+            })
     });
     
     gulp.task('pages', function (cb) {

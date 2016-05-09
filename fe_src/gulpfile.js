@@ -80,7 +80,7 @@
     });
 
     gulp.task('common', function (cb) {
-        var subTasks = 3;
+        var subTasks = 4;
         var cbs = 0;
 
         // common js
@@ -113,7 +113,16 @@
                 if (++cbs === subTasks) {
                     cb();
                 }
-            })
+            });
+
+        // others
+        gulp.src([path.join(paths.common.root, '*.*')])
+            .pipe(gulp.dest(paths.build.root))
+            .on('end', function () {
+                if (++cbs === subTasks) {
+                    cb();
+                }
+            });
     });
     
     gulp.task('pages', function (cb) {

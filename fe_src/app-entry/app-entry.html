@@ -4,6 +4,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Your app title -->
@@ -12,8 +13,11 @@
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <!-- Path to Framework7 color related styles, iOS Theme -->
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- iconfont -->
+    <link rel="stylesheet" href="css/iconfont.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app-entry.css">
+    <link rel="stylesheet" href="css/record-detail.css">
 </head>
 <body>
 <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -29,427 +33,122 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                <div class="center sliding">Thorgene</div>
-                <div class="right">
-                    <a href="#" data-panel="right" class="link open-panel icon-only">
-                        <i class="icon icon-bars"></i>
-                    </a>
-                </div>
+                <div class="center">Thorgene</div>
             </div>
         </div>
+
+        <div class="toolbar">
+            <div class="toolbar-inner">
+                <a href="#" class="link">动态</a>
+                <a href="#" class="link">趋势</a>
+                <a href="#" class="link">记录</a>
+                <a href="#" class="link">我的</a>
+            </div>
+        </div>
+
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through">
+        <div class="pages navbar-through toolbar-through">
             <!-- Page, "data-page" contains page name -->
             <div data-page="main-page" class="page">
-                <div class="page-content">
+                <div class="page-content infinite-scroll">
                     <div class="summary"></div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
+                    <div class="detail">
+                        <div class="content-block-title">星期三,05月04日</div>
+                        <div class="list-block media-list inset">
+                            <ul>
+                                <li>
+                                    <a href="record-detail.html" class="item-link item-content">
+                                        <div class="record-left">
+                                            <i class="iconfont record-icon">&#xe610;</i>
+                                            <div class="record-time">15:26</div>
                                         </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row record-container">
+                                                <div class="record-content">
+                                                    <div class="record-title">评分</div>
+                                                    <div class="record-value">92</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">正常</div>
+                                                    <div class="record-value">3</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">预警</div>
+                                                    <div class="record-value">1</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">危险</div>
+                                                    <div class="record-value">0</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="record-detail.html" class="item-link item-content">
+                                        <div class="record-left">
+                                            <i class="iconfont record-icon">&#xe610;</i>
+                                            <div class="record-time">15:26</div>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row record-container">
+                                                <div class="record-content">
+                                                    <div class="record-title">评分</div>
+                                                    <div class="record-value">92</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">正常</div>
+                                                    <div class="record-value">3</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">预警</div>
+                                                    <div class="record-value">1</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">危险</div>
+                                                    <div class="record-value">0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="record-detail.html" class="item-link item-content">
+                                        <div class="record-left">
+                                            <i class="iconfont record-icon">&#xe610;</i>
+                                            <div class="record-time">15:26</div>
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row record-container">
+                                                <div class="record-content">
+                                                    <div class="record-title">评分</div>
+                                                    <div class="record-value">92</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">正常</div>
+                                                    <div class="record-value">3</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">预警</div>
+                                                    <div class="record-value">1</div>
+                                                </div>
+                                                <div class="record-content">
+                                                    <div class="record-title">危险</div>
+                                                    <div class="record-value">0</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-block-title">星期三,05月04日</div>
-                    <div class="list-block media-list inset">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"><i class="iconfont record">&#xe610;</i></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">体重</div>
-                                        </div>
-                                        <div class="item-subtitle">70.0kg</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-link item-content">
-                                    <div class="item-media"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title">身高</div>
-                                        </div>
-                                        <div class="item-subtitle">170cm</div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
 
+
+                    <!-- Preloader -->
+                    <!--<div class="infinite-scroll-preloader">-->
+                        <!--<div class="preloader"></div>-->
+                    <!--</div>-->
 
                 </div>
             </div>

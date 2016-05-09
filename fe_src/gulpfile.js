@@ -3,6 +3,7 @@
     var gulp = require('gulp');
     var less = require('gulp-less');
     var connect = require('gulp-connect');
+    var ConnectProxy = require('gulp-connect-proxy');
     var uglify = require('gulp-uglify');
     var htmlmin = require('gulp-htmlmin');
     var rename = require('gulp-rename');
@@ -18,7 +19,7 @@
         },
         pages: {
             // 新增页面时,需要追加list
-            list: ['demo-page'],
+            list: ['demo-page', 'app-entry', 'record-detail'],
             js: 'js/*.js',
             less: 'less/*.less',
             html: '*.html'
@@ -79,7 +80,7 @@
     });
 
     gulp.task('common', function (cb) {
-        var subTasks = 3;
+        var subTasks = 4;
         var cbs = 0;
 
         // common js
@@ -112,7 +113,16 @@
                 if (++cbs === subTasks) {
                     cb();
                 }
-            })
+            });
+
+        // others
+        gulp.src([path.join(paths.common.root, '*.*')])
+            .pipe(gulp.dest(paths.build.root))
+            .on('end', function () {
+                if (++cbs === subTasks) {
+                    cb();
+                }
+            });
     });
     
     gulp.task('pages', function (cb) {
@@ -204,7 +214,12 @@
         return connect.server({
             root: [ './build' ],
             livereload: true,
-            port:'3000'
+            port:'3000',
+            middleware: function (connect, opt) {
+                opt.route = '/api';
+                var proxy = new ConnectProxy(opt);
+                return [proxy];
+            }
         });
     });
 

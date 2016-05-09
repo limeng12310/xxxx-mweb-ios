@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<!-- Status bar overlay for full screen mode (PhoneGap) -->
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+<div class="panel panel-right panel-reveal">
+
+</div>
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="index.html" class="back link">
+                        <i class="icon icon-back"></i>
+                        <span>返回</span>
+                    </a>
+                </div>
+                <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                <div class="center">Thorgene</div>
+
+                <!-- Sub navbar -->
+                <div class="subnavbar sliding">
+                    <!-- Sub navbar content, for example tabs buttons -->
+                    <div class="buttons-row">
+                        <a href="#itemall" class="button tab-link active">全部</a>
+                        <a href="#itemnormal" class="button tab-link">正常</a>
+                        <a href="#itemwarn" class="button tab-link">预警</a>
+                        <a href="#itemdanger" class="button tab-link">危险</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="toolbar">-->
+            <!--<div class="toolbar-inner">-->
+                <!--<a href="#" class="link">动态</a>-->
+                <!--<a href="#" class="link">趋势</a>-->
+                <!--<a href="#" class="link">记录</a>-->
+                <!--<a href="#" class="link">我的</a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="record-detail" class="page with-subnavbar">
+                <div class="page-content">
+                    <div class="page-scroll">
+                        <div class="tabs">
+                            <div id="itemall" class="tab active">
+                                <div class="list-block accordion-list inset">
+                                    <ul>
+                                        <li class="accordion-item">
+                                            <a href="#" class="item-link item-content">
+                                                <div class="checkitem-left">
+                                                    <i class="iconfont checkitem-icon">&#xe610;</i>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="checkitem-container">
+                                                        <div class="checkitem-name">白细胞计数</div>
+                                                        <div class="checkitem-value">3.6</div>
+                                                        <div class="checkitem-unit">10^9U/L</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="accordion-item-content">
+                                                <div class="content-block">
+                                                    <div class="checkitem-graph">graph</div>
+                                                    <div class="checkitem-desc1">白细胞计数，是指计数单位体积血液中所含的白细胞数目。旧称白血球，是机体防御系统的重要组成部分</div>
+                                                    <div class="checkitem-desc2">1.生理性
+                                                        主要见于月经前、妊娠、分娩、哺乳期妇女、剧烈运动、兴奋激动、饮酒、餐后等。新生儿及婴儿明显高于成人。
+                                                        2.病理性
+                                                        急性化脓性感染（脓肿、脑膜炎、肺炎阑尾炎扁桃体炎等），某些病毒感染（传染性单核细胞增多症，流行性乙型脑炎）白血病，类白血病反应，糖尿病酮症酸中毒，严重烧伤，急性大出血，恶性肿瘤及某些金属（如铅、汞等）中毒生理性增高见于新生儿月经期，分娩，情绪变化及注射肾上腺素后等。
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="list-block accordion-list inset">
+                                    <ul>
+                                        <li class="accordion-item">
+                                            <a href="#" class="item-link item-content">
+                                                <div class="checkitem-left">
+                                                    <i class="iconfont checkitem-icon">&#xe610;</i>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="checkitem-container">
+                                                        <div class="checkitem-name">白细胞计数</div>
+                                                        <div class="checkitem-value">3.6</div>
+                                                        <div class="checkitem-unit">10^9U/L</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="accordion-item-content">
+                                                <div class="content-block">
+                                                    <div class="checkitem-graph">graph</div>
+                                                    <div class="checkitem-desc1">白细胞计数，是指计数单位体积血液中所含的白细胞数目。旧称白血球，是机体防御系统的重要组成部分</div>
+                                                    <div class="checkitem-desc2">1.生理性
+                                                        主要见于月经前、妊娠、分娩、哺乳期妇女、剧烈运动、兴奋激动、饮酒、餐后等。新生儿及婴儿明显高于成人。
+                                                        2.病理性
+                                                        急性化脓性感染（脓肿、脑膜炎、肺炎阑尾炎扁桃体炎等），某些病毒感染（传染性单核细胞增多症，流行性乙型脑炎）白血病，类白血病反应，糖尿病酮症酸中毒，严重烧伤，急性大出血，恶性肿瘤及某些金属（如铅、汞等）中毒生理性增高见于新生儿月经期，分娩，情绪变化及注射肾上腺素后等。
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item-padding"></div>
+                            </div>
+                            <div id="itemnormal" class="tab">
+                                <div class="content-block">
+                                    <p>empty</p>
+                                </div>
+                            </div>
+                            <div id="itemwarn" class="tab">
+                                <div class="content-block">
+                                    <p>empty</p>
+                                </div>
+                            </div>
+                            <div id="itemdanger" class="tab">
+                                <div class="content-block">
+                                    <p>empty</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
